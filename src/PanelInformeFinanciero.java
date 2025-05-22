@@ -3,6 +3,7 @@ import javax.swing.*;
 public class PanelInformeFinanciero extends JFrame {
     private JPanel SCJBpanelInforme;
     private JTextArea SCJBtxtInforme;
+    private JScrollPane SCJBscrollPane;
 
     public PanelInformeFinanciero(GestorAgentes gestor) {
         setTitle("CUENCABRAZALES SECURE - Informe Financiero");

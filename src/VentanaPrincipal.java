@@ -6,14 +6,33 @@ public class VentanaPrincipal extends JFrame {
 
         setTitle("CUENCABRAZALES SECURE - Sistema de Agentes");
         setContentPane(panel.SCJBpanelPrincipal);
-        setSize(400, 300);
+        setSize(500, 350);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        panel.SCJBRegistrar.addActionListener(e -> new FormularioAgente(gestor));
-        panel.SCJBModificar.addActionListener(e -> new FormularioModificarAgente(gestor));
-        panel.SCJBListar.addActionListener(e -> new PanelListaAgentes(gestor));
-        panel.SCJBInforme.addActionListener(e -> new PanelInformeFinanciero(gestor));
+        // Botón: Registrar agente
+        panel.SCJBRegistrar.addActionListener(e -> {
+            System.out.println("Click en REGISTRAR");
+            new FormularioAgente(gestor);
+        });
+
+        // Botón: Modificar agente
+        panel.SCJBModificar.addActionListener(e -> {
+            System.out.println("Click en MODIFICAR");
+            new FormularioModificarAgente(gestor);
+        });
+
+        // Botón: Listar agentes
+        panel.SCJBListar.addActionListener(e -> {
+            System.out.println("Click en LISTAR");
+            new PanelListaAgentes(gestor);
+        });
+
+        // Botón: Informe financiero
+        panel.SCJBInforme.addActionListener(e -> {
+            System.out.println("Click en INFORME");
+            new PanelInformeFinanciero(gestor);
+        });
 
         setVisible(true);
     }
