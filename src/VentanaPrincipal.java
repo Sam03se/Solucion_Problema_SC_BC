@@ -10,16 +10,10 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        panel.SCJBRegistrar.addActionListener(e -> {
-            System.out.println("Click en REGISTRAR");
-            new FormularioAgente(gestor);
-        });
-
-        panel.SCJBModificar.addActionListener(e -> JOptionPane.showMessageDialog(this, "Función modificar aún no implementada"));
-
-        panel.SCJBListar.addActionListener(e -> JOptionPane.showMessageDialog(this, "Función listar aún no implementada"));
-
-        panel.SCJBInforme.addActionListener(e -> JOptionPane.showMessageDialog(this, "Función informe aún no implementada"));
+        panel.SCJBRegistrar.addActionListener(e -> new FormularioAgente(gestor));
+        panel.SCJBModificar.addActionListener(e -> new FormularioModificarAgente(gestor));
+        panel.SCJBListar.addActionListener(e -> new PanelListaAgentes(gestor));
+        panel.SCJBInforme.addActionListener(e -> new PanelInformeFinanciero(gestor));
 
         setVisible(true);
     }

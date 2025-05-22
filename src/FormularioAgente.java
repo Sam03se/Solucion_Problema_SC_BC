@@ -1,40 +1,36 @@
 import javax.swing.*;
 
 public class FormularioAgente extends JFrame {
-    private JPanel panelFormulario;
-    public JTextField txtId;
-    public JTextField txtNombre;
-    public JTextField txtMision;
-    public JComboBox<Integer> comboPeligro;
-    public JTextField txtPago;
-    public JButton btnGuardar;
+    private JPanel SCJBpanelFormulario;
+    public JTextField SCJBtxtId;
+    public JTextField SCJBtxtNombre;
+    public JTextField SCJBtxtMision;
+    public JComboBox<Integer> SCJBcomboPeligro;
+    public JTextField SCJBtxtPago;
+    public JButton SCJBbtnGuardar;
 
     public FormularioAgente(GestorAgentes gestor) {
         setTitle("CUENCABRAZALES SECURE - Registro de Agente");
-        setContentPane(panelFormulario);
+        setContentPane(SCJBpanelFormulario);
         setSize(400, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        // Cargar niveles de peligrosidad del 1 al 5
-        for (int i = 1; i <= 5; i++) {
-            comboPeligro.addItem(i);
-        }
+        for (int i = 1; i <= 5; i++) SCJBcomboPeligro.addItem(i);
 
-        // Acción del botón Guardar
-        btnGuardar.addActionListener(e -> {
+        SCJBbtnGuardar.addActionListener(e -> {
             try {
-                String id = txtId.getText().trim();
-                String nombre = txtNombre.getText().trim();
-                String mision = txtMision.getText().trim();
-                int peligro = (int) comboPeligro.getSelectedItem();
-                double pago = Double.parseDouble(txtPago.getText().trim());
+                String id = SCJBtxtId.getText().trim();
+                String nombre = SCJBtxtNombre.getText().trim();
+                String mision = SCJBtxtMision.getText().trim();
+                int peligro = (int) SCJBcomboPeligro.getSelectedItem();
+                double pago = Double.parseDouble(SCJBtxtPago.getText().trim());
 
                 Agente nuevo = new Agente(id, nombre, mision, peligro, pago);
                 gestor.agregarAgente(nuevo);
 
                 JOptionPane.showMessageDialog(this, "Agente registrado correctamente.");
-                dispose(); // cerrar formulario
+                dispose();
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, "Error al registrar: " + ex.getMessage());
@@ -42,10 +38,5 @@ public class FormularioAgente extends JFrame {
         });
 
         setVisible(true);
-    }
-
-    // Solo necesario si planeas usar componentes personalizados
-    private void createUIComponents() {
-        // TODO: Agrega componentes personalizados si es necesario
     }
 }
