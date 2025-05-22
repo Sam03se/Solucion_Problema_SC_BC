@@ -13,7 +13,7 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="NOMBRE AGENTE"/>
+          <text value="ID AGENTE"/>
         </properties>
       </component>
       <component id="d07f2" class="javax.swing.JTextField" binding="SCJBtxtId">
@@ -37,7 +37,7 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="ID AGENTE"/>
+          <text value="NOMBRE AGENTE"/>
         </properties>
       </component>
       <component id="df042" class="javax.swing.JTextField" binding="SCJBtxtMision">
